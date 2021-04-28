@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<displays>
+<display id="0d870586-0179-1000-8001-c0a8000359da" type="" style="Table" enable="true">
+	<name><![CDATA[Employees_fo_ Department]]></name>
+	<description><![CDATA[A report to show all Employees for a Department]]></description>
+	<tooltip><![CDATA[]]></tooltip>
+	<drillclass><![CDATA[]]></drillclass>
+	<CustomValues>
+		<TYPE><![CDATA[horizontal]]></TYPE>
+	</CustomValues>
+	<query>
+		<sql><![CDATA[select e.employee_name, d.department_name, e.salary
+from departments d, employees e
+where d.department_id = e.department_id 
+and d.department_name like cast(:dept_nm as char(50))
+order by d.department_name]]></sql>
+		<binds>
+			<bind id="dept_nm">
+				<prompt><![CDATA[dept_nm]]></prompt>
+				<tooltip><![CDATA[dept_nm]]></tooltip>
+				<value><![CDATA[Sales]]></value>
+				<bracket><![CDATA[null]]></bracket>
+			</bind>
+		</binds>
+	</query>
+		<pdf version="VERSION_1_7" compression="CONTENT">
+			<docproperty title="null" author="null" subject="null" keywords="null" />
+			<cell toppadding="2" bottompadding="2" leftpadding="2" rightpadding="2" horizontalalign="LEFT" verticalalign="TOP" wrap="true" />
+			<column>
+				<heading font="null" size="10" style="NORMAL" color="-16777216" rowshading="-1" labeling="FIRST_PAGE" />
+				<footing font="null" size="10" style="NORMAL" color="-16777216" rowshading="-1" labeling="NONE" />
+				<blob blob="NONE" zip="false" />
+			</column>
+			<table font="null" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
+			<header enable="false" generatedate="false">
+				<data>
+				
+				
+				
+				
+				null																				</data>
+			</header>
+			<footer enable="false" generatedate="false">
+				<data value="null" />
+			</footer>
+			<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
+		</pdf>
+</display>
+</displays>
